@@ -3,7 +3,7 @@ import java.util.Collection;
 
 class Collections {
     public static void main(String args[]) {
-        Collection nums = new ArrayList();
+        Collection<Integer> nums = new ArrayList<>();
         nums.add(5);
         nums.add(2);
         nums.add(9);
