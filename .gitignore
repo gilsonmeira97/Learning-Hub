@@ -1,6 +1,6 @@
 # Created by https://www.toptal.com/developers/gitignore/api/reactnative,java,kotlin,react,angular,node
 # Edit at https://www.toptal.com/developers/gitignore?templates=reactnative,java,kotlin,react,angular,node
-
+*.code-workspace
 ### Angular ###
 ## Angular ##
 # compiled output
@@ -308,7 +308,7 @@ __generated__
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
 
 # Thumbnails
 ._*
