@@ -1,0 +1,13 @@
+<app-footer></app-footer>
+{{data}}
+
+<img [src]="myHomeObj.img" [alt]="myHomeObj.title">
+<br/>
+<span>{{firstName.toUpperCase()}}</span>
+<br/>
+<input type="text" [(ngModel)]="firstName" />
+<br/>
+Apertado por {{qtd}} vezes!
+<br/>
+<button (click)="testButton()">Click Here!!!</button>
+<br/>
