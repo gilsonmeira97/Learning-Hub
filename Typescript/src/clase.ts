@@ -22,6 +22,7 @@ tax = 'ten';
 let requestStatus: 'pending' | 'success' | 'error' = 'pending';
 requestStatus = 'success';
 
+// How use any
 let notSure: any = 4;
 notSure = false;
 notSure = 'Ana';
