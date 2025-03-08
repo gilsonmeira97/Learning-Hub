@@ -28,6 +28,10 @@ app.post('/api/signup', async (req, res) => {
     try{
         const{email, password} = req.body;
 
+        if(!email || !password) {
+            return res.status(400).json({message: 'Email and password is required.'});
+        }
+
         const userExists = await User.findOne({email});
         if(userExists) {
             return res.status(400).json({message: 'Email already in use'});
@@ -36,7 +40,7 @@ app.post('/api/signup', async (req, res) => {
         const newUser = new User({email, password: hashedPassword});
         
         await newUser.save();
-        res.status(201).json({data: email, message: 'User created successfuly.'});
+        res.status(201).json({email, message: 'User created successfuly.'});
     } catch(error) {
         console.log("Error during signup");
         res.status(500).json({message: 'Server error during signup'});
@@ -49,13 +53,13 @@ app.post('/api/signin', async (req, res) => {
 
         const user = await User.findOne({email});
         if(user == null)
-            return res.status(404).json({message: 'Invalid email or password.2'});
+            return res.status(404).json({message: 'Invalid email or password.'});
 
         const isSamePassword = await bcrypt.compare(password, user.password);
         if(!isSamePassword) {
             return res.status(404).json({message: 'Invalid email or password.'});
         }
-        
+         
         const token = jwt.sign({
             userId: user._id,
             email: user.email
@@ -65,7 +69,7 @@ app.post('/api/signin', async (req, res) => {
         
         return res.json({token, user: { email}, message: 'Success login!'});
     } catch(error) {
-        res.status(500).json({message: 'Server error during signin'});
+        res.status(500).json({message: 'Server error during signin.'});
     }
 })
 
@@ -92,7 +96,7 @@ app.get('/api/profile', authenticateToken ,async (req, res) => {
         const user = await User.findById(userId).select("-password");
 
         if(!user) {
-            return res.status(404).json({message: 'User not found'});
+            return res.status(404).json({message: 'User not found.'});
         }
 
         return res.json(user)

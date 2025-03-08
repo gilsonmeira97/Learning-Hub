@@ -1,0 +1,14 @@
+<div class="profile-container">
+    <h2>Profile</h2>
+    @if(userData) {
+        <div>
+            <p><strong>Email:</strong> {{userData.email}}</p>
+            <p><strong>User ID:</strong> {{userData._id}}</p>
+            <button (click)="onLogout()">Logout</button>
+        </div>
+    } @else {
+        <p *ngIf="errorMessage">{{ errorMessage }}</p>
+        <p *ngIf="!errorMessage">Loading profile...</p>
+    }
+
+</div>
