@@ -1,0 +1,16 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        <bean id="alien" class="com.testing.learning.Alien" scope="prototype">
+<!--            <property name="age" value="28"></property>-->
+<!--            <property name="laptop" ref="laptop-id"></property>-->
+
+<!--            <constructor-arg type="int" value="32" />-->
+<!--            <constructor-arg type="com.testing.learning.Laptop" ref="laptop-id" />-->
+
+            <constructor-arg ref="laptop-id" index="1"/>
+            <constructor-arg value="30" index="0" />
+        </bean>
+        <bean id="laptop-id" class="com.testing.learning.Laptop" scope="singleton" />
+</beans>
