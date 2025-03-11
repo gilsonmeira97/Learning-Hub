@@ -29,3 +29,5 @@ function setTheme(t: Theme) {
 }
 
 setTheme('dark');
+
+console.log('isActive' in susan);
