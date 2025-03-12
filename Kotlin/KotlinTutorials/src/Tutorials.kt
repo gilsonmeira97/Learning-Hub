@@ -1,4 +1,4 @@
-fun main() {
+fun test() {
     println("Hello World!");
     var myVariable: Int = 5;
     val myNum = 7; // Kotlin has automatic type inference
