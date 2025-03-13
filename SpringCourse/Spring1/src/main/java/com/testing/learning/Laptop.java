@@ -1,11 +1,13 @@
 package com.testing.learning;
 
-public class Laptop {
+public class Laptop implements Computer {
     Laptop() {
         System.out.println("Creating Laptop...");
     }
 
-    void compile() {
-        System.out.println("Compiling...");
+
+    @Override
+    public void compile() {
+        System.out.println("Compiling using laptop");
     }
 }
