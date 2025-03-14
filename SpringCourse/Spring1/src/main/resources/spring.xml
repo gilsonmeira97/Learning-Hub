@@ -2,8 +2,11 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-        <bean id="alien" class="com.testing.learning.Alien" scope="prototype" autowire="byType">
+        <bean id="alien" class="com.testing.learning.Alien" scope="prototype" >
             <property name="age" value="28"/>
+                <property name="com">
+                        <bean id="com3" class="com.testing.learning.Desktop" scope="singleton" />
+                </property>
 <!--            <property name="com" ref="laptop-id"/>-->
 
 <!--            <constructor-arg type="int" value="32" />-->
@@ -13,8 +16,8 @@
 <!--            <constructor-arg value="30" index="0" />-->
         </bean>
 <!--        <bean id="laptop-id" class="com.testing.learning.Laptop" scope="singleton" />-->
-        <bean id="com2" class="com.testing.learning.Desktop" scope="singleton" lazy-init="true" />
-        <bean id="com3" class="com.testing.learning.Desktop" scope="prototype" />
-        <bean id="com1" class="com.testing.learning.Laptop" scope="singleton" primary="true" />
+<!--        <bean id="com2" class="com.testing.learning.Desktop" scope="singleton" lazy-init="true" />-->
+<!--        <bean id="com3" class="com.testing.learning.Desktop" scope="prototype" />-->
+<!--        <bean id="com1" class="com.testing.learning.Laptop" scope="singleton" primary="true" />-->
 
 </beans>

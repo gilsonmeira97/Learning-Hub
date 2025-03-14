@@ -1,8 +1,16 @@
 package com.testing.learning;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component
+@Scope("prototype")
+@Primary
 public class Desktop implements Computer {
 
-    Desktop() {
+    public Desktop() {
         System.out.println("Creating a desktop");
     }
 

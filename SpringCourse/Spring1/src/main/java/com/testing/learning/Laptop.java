@@ -1,7 +1,10 @@
 package com.testing.learning;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Laptop implements Computer {
-    Laptop() {
+    public Laptop() {
         System.out.println("Creating Laptop...");
     }
 
