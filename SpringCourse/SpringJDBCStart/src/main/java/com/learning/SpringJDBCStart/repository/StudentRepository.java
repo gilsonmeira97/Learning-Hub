@@ -17,7 +17,7 @@ public class StudentRepository {
     public void save(Student student) {
         String sql = "insert into student (rollno, name, marks) values (?,?,?)";
         int result = jdbc.update(sql, student.getRollNo(), student.getName(), student.getMarks());
-        System.out.printf("%d lines affected.", result);
+        System.out.printf("%d line affected. /n", result);
     }
 
     public List<Student> findAll() {

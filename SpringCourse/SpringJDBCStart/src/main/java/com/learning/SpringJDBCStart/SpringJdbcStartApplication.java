@@ -19,11 +19,11 @@ public class SpringJdbcStartApplication {
 		s.setName("Navin");
 		s.setMarks(78);
 
-		StudentService studentServie = context.getBean(StudentService.class);
+		StudentService studentService = context.getBean(StudentService.class);
 
-		studentServie.addStudent(s);
+		//studentService.addStudent(s);
 
-		List<Student> students = studentServie.getStudents();
+		List<Student> students = studentService.getStudents();
 		System.out.println(students);
 	}
 }
