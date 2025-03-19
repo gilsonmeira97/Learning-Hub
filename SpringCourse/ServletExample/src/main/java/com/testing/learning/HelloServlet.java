@@ -9,5 +9,9 @@ import java.io.IOException;
 public class HelloServlet extends HttpServlet {
     public void service(HttpServletRequest req, HttpServletResponse res) throws IOException {
         System.out.println("Service running...");
+
+        res.setContentType("text/html");
+
+        res.getWriter().println("<h2>Hello World!</h2");
     }
 }
