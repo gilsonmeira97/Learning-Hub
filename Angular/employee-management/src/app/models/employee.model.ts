@@ -1,4 +1,4 @@
-export class User {
+export class Employee {
     employeeId: string = ''
     employeeName: string = ''
     contactNo: string = ''

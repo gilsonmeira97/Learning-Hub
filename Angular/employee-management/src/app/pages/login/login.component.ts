@@ -1,12 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { User } from '../../models/user.model';
-import { Observable } from 'rxjs';
-import { Route, Router } from '@angular/router';
+import { Employee } from '../../models/employee.model';
+import { Router } from '@angular/router';
+import { ApiResponse } from '../../models/api-response';
 
 type Login = {userName: string, password: string};
-type ResponseLogin = { message: string, result: boolean, data: User };
 
 @Component({
   selector: 'app-login',
@@ -25,7 +24,7 @@ export class LoginComponent {
 
   onLogin(){
     this.resultMessage='';
-    this.http.post<ResponseLogin>(this.loginURL, this.loginObj).subscribe(({message, data}: ResponseLogin) => {
+    this.http.post<ApiResponse<Employee>>(this.loginURL, this.loginObj).subscribe(({message, data}: ApiResponse<Employee>) => {
       if(data) {
         localStorage.setItem('employeeApp', JSON.stringify(data));
         this.router.navigateByUrl('dashboard');
