@@ -18,6 +18,12 @@
             </div>
 
             <button class="btn-login" (click)="onLogin()">Login</button>
+
+            @if (resultMessage) {
+                <div style="text-align: center; color: red; border: 1px solid rgba(192, 192, 192, 0.2); border-radius: 15px; width: 100%; padding: 15px 10px;">
+                    Error: {{resultMessage}}
+                </div>
+            }
         </div>
     </div>
 </main>

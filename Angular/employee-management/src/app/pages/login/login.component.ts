@@ -17,20 +17,21 @@ type ResponseLogin = { message: string, result: boolean, data: User };
 export class LoginComponent {
   loginURL: string = 'https://projectapi.gerasim.in/api/EmployeeManagement/login';
   loginObj: Login = { userName: '', password: '' };
+  resultMessage: String = '';
   
   // http = inject(HttpClient); // New option
 
   constructor(private http: HttpClient, private router: Router){}
 
   onLogin(){
-    this.http.post<ResponseLogin>(this.loginURL, this.loginObj).subscribe(({result, message, data}: ResponseLogin) => {
-      if(result) {
+    this.resultMessage='';
+    this.http.post<ResponseLogin>(this.loginURL, this.loginObj).subscribe(({message, data}: ResponseLogin) => {
+      if(data) {
         localStorage.setItem('employeeApp', JSON.stringify(data));
         this.router.navigateByUrl('dashboard');
       } else {
-        alert(message);
+        this.resultMessage = message;
       }
     })
   }
-
 }
