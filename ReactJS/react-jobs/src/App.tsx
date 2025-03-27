@@ -1,27 +1,26 @@
+import { useState } from "react"
 import Hero from "./components/Hero"
 import HomeCards from "./components/HomeCards"
 import JobListings from "./components/JobListings"
 import Navbar from "./components/Navbar"
+import ViewAllJobs from "./components/ViewAllJobs"
 
 const App = () => {
-    return (
-        <>
-            <Navbar />
-            <Hero />
-            <HomeCards />
-            <JobListings />
-    {/* <!-- Browse Jobs --> */}
-    
-
-    <section className="m-auto max-w-lg my-10 px-6">
-      <a
-        href="jobs.html"
-        className="block bg-black text-white text-center py-4 px-6 rounded-xl hover:bg-gray-700"
-        >View All Jobs</a
-      >
-    </section>
-        </>
-    )
+  const [pagination, setPagination] = useState(3);
+  
+  function updatePagination() {
+    setPagination(value => value + 3)
+  }
+  
+  return (
+    <>
+      <Navbar />
+      <Hero />
+      <HomeCards />
+      <JobListings pagination={pagination}/>
+      <ViewAllJobs updatePagination={updatePagination} />
+    </>
+  )
 }
 
 export default App

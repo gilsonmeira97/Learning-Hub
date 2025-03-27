@@ -82,5 +82,103 @@
         "contactEmail": "contact@ipsumlorem.com",
         "contactPhone": "555-555-5555"
       }
+    },
+    {
+      "id": "7",
+      "title": "Senior Front-End Engineer",
+      "type": "Full-Time",
+      "description": "We are looking for a Senior Front-End Engineer to lead the development of our web applications in San Francisco, CA. The ideal candidate will have expertise in React, TypeScript, and modern CSS frameworks.",
+      "location": "San Francisco, CA",
+      "salary": "$120K - $140K",
+      "company": {
+        "name": "TechNova Inc.",
+        "description": "TechNova is a forward-thinking company that specializes in building scalable software solutions. We value innovation, collaboration, and delivering exceptional results to our clients.",
+        "contactEmail": "careers@technova.com",
+        "contactPhone": "555-555-5555"
+      }
+    },
+    {
+      "id": "8",
+      "title": "UI/UX Designer",
+      "type": "Full-Time",
+      "description": "Join our creative team in Austin, TX, as a UI/UX Designer. We are seeking someone with a strong portfolio and experience in designing intuitive user interfaces for web and mobile applications.",
+      "location": "Austin, TX",
+      "salary": "$80K - $90K",
+      "company": {
+        "name": "PixelWorks",
+        "description": "PixelWorks is a design agency focused on crafting beautiful and functional digital experiences. Our team thrives on creativity and delivering impactful solutions for our clients.",
+        "contactEmail": "info@pixelworks.com",
+        "contactPhone": "555-555-5555"
+      }
+    },
+    {
+      "id": "9",
+      "title": "Backend Developer (Node.js)",
+      "type": "Full-Time",
+      "description": "We are hiring a Backend Developer with expertise in Node.js and database management. This role is based in Chicago, IL, and offers opportunities to work on cutting-edge projects.",
+      "location": "Chicago, IL",
+      "salary": "$90K - $100K",
+      "company": {
+        "name": "CloudNet Solutions",
+        "description": "CloudNet Solutions is a technology company specializing in cloud-based infrastructure and backend development. We pride ourselves on innovation and delivering reliable solutions.",
+        "contactEmail": "jobs@cloudnet.com",
+        "contactPhone": "555-555-5555"
+      }
+    },
+    {
+      "id": "10",
+      "title": "DevOps Engineer",
+      "type": "Full-Time",
+      "description": "Seeking a DevOps Engineer to join our team in Seattle, WA. The ideal candidate will have experience with CI/CD pipelines, containerization, and cloud platforms like AWS or Azure.",
+      "location": "Seattle, WA",
+      "salary": "$110K - $120K",
+      "company": {
+        "name": "SkyBridge Technologies",
+        "description": "SkyBridge Technologies is a leading provider of cloud and DevOps solutions. We empower businesses to scale efficiently and securely through innovative technologies.",
+        "contactEmail": "hr@skybridge.com",
+        "contactPhone": "555-555-5555"
+      }
+    },
+    {
+      "id": "11",
+      "title": "Mobile App Developer (React Native)",
+      "type": "Full-Time",
+      "description": "Join our team in New York, NY, as a Mobile App Developer specializing in React Native. We are looking for someone passionate about building cross-platform mobile applications.",
+      "location": "New York, NY",
+      "salary": "$100K - $110K",
+      "company": {
+        "name": "AppWave Studios",
+        "description": "AppWave Studios is a creative agency focused on developing innovative mobile applications. Our team values creativity, collaboration, and delivering high-quality products.",
+        "contactEmail": "jobs@appwave.com",
+        "contactPhone": "555-555-5555"
+      }
+    },
+    {
+      "id": "12",
+      "title": "Data Scientist",
+      "type": "Full-Time",
+      "description": "We are seeking a Data Scientist to join our team in Los Angeles, CA. The ideal candidate will have experience with machine learning, data analysis, and Python programming.",
+      "location": "Los Angeles, CA",
+      "salary": "$110K - $130K",
+      "company": {
+        "name": "DataCore Analytics",
+        "description": "DataCore Analytics is a leader in data-driven insights and artificial intelligence. We help businesses make informed decisions through advanced analytics.",
+        "contactEmail": "careers@datacore.com",
+        "contactPhone": "555-555-5555"
+      }
+    },
+    {
+      "id": "13",
+      "title": "Product Manager",
+      "type": "Full-Time",
+      "description": "Join our team in Denver, CO, as a Product Manager. We are looking for someone with strong leadership skills and experience managing software development projects.",
+      "location": "Denver, CO",
+      "salary": "$100K - $120K",
+      "company": {
+        "name": "InnoVenture",
+        "description": "InnoVenture is a startup accelerator focused on fostering innovation and growth. We support entrepreneurs in bringing their ideas to life.",
+        "contactEmail": "info@innoventure.com",
+        "contactPhone": "555-555-5555"
+      }
     }
   ]
