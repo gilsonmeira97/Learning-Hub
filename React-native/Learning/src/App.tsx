@@ -12,10 +12,24 @@ import Pai from './components/direta/Pai'
 import PaiIndireta from './components/indireta/Pai'
 import ContadorV2 from './components/contador/ContadorV2'
 const {Comp1, Comp2} = require('./components/Multi')
+import Diferenciar from './components/Diferenciar'
+import ParImpar from './components/ParImpar'
+import Familia from './components/relacao/Familia'
+import Membro from './components/relacao/Membro'
 
 export default () => (
     <SafeAreaView style={style.App}>
-        <ContadorV2 />
+        <Familia>
+            <Membro name='Silvana' lastName='Silva'></Membro>
+            <Membro name='Raquel' lastName='Silva'></Membro>
+        </Familia>
+        <Familia>
+            <Membro name='Marcela' lastName='Dantas'></Membro>
+            <Membro name='Francisca' lastName='Dantas'></Membro>
+        </Familia>
+        {/* <ParImpar value={5} /> */}
+        {/* <Diferenciar /> */}
+        {/* <ContadorV2 /> */}
         {/* <PaiIndireta /> */}
         {/* <Pai /> */}
         {/* <Contador inicial={100}/> */}
