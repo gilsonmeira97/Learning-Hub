@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { ApiResponse } from '../models/api-response';
 import { ParentDept } from '../models/parent-dept';
 import { ChildDept } from '../models/child-dept';
+import { Employee } from '../models/employee.model';
 
 @Injectable({
   providedIn: 'root'
@@ -18,5 +19,9 @@ export class MasterService {
 
   getChildParent(deptId: String){
     return this.http.get<ApiResponse<ChildDept[]>>(`${this.baseURL}/GetChildDepartmentByParentId?deptId=${deptId}`);
+  }
+
+  createEmployee(newEmployee: Employee) {
+    return this.http.post<Employee>(`${this.baseURL}/CreateEmployee`, newEmployee);
   }
 }

@@ -47,30 +47,32 @@
                     <div class="row">
                         <div class="col-md-6"><label for="employeeName" class="form-label">Employee Name</label><input
                                 type="text" name="employeeName" id="employeeName" placeholder="Enter employee name"
-                                class="form-control ng-untouched ng-pristine ng-valid"></div>
+                                class="form-control ng-untouched ng-pristine ng-valid" [(ngModel)]="newEmployee.employeeName"></div>
                         <div class="col-md-6"><label for="contactNo" class="form-label">Contact No</label><input
                                 type="text" name="contactNo" id="contactNo" placeholder="Enter contact number"
-                                class="form-control ng-untouched ng-pristine ng-valid"></div>
+                                class="form-control ng-untouched ng-pristine ng-valid"  [(ngModel)]="newEmployee.contactNo"></div>
                     </div>
                     <div class="row">
                         <div class="col-md-6"><label for="emailId" class="form-label">Email</label><input type="email"
                                 name="emailId" id="emailId" placeholder="Enter email"
-                                class="form-control ng-untouched ng-pristine ng-valid"></div>
+                                class="form-control ng-untouched ng-pristine ng-valid"  [(ngModel)]="newEmployee.emailId"></div>
                     </div>
                     <div class="row">
                         <div class="col-md-6"><label for="deptId" class="form-label">Parent Department</label><select
-                                id="deptId" name="deptId" class="form-select ng-untouched ng-pristine ng-valid" (change)="getChildParent()" [(ngModel)]="selectedDept">
-                                <option selected="">Select department</option>
+                                id="deptId" name="deptId" class="form-select ng-untouched ng-pristine ng-valid"
+                                (change)="getChildParent()" [(ngModel)]="selectedDept">
+                                <option selected="" value="0">Select department</option>
                                 @for (item of parentDeptList; track $index) {
                                 <option [value]="item.departmentId">{{item.departmentName}}</option>
                                 }
 
                             </select></div>
-                        <div class="col-md-6"><label for="childDeptId" class="form-label">Child Department</label><select
-                                id="childDeptId" name="childDeptId" class="form-select ng-untouched ng-pristine ng-valid">
-                                <option selected="">Select department</option><!---->
+                        <div class="col-md-6"><label for="childDeptId" class="form-label">Child
+                                Department</label><select id="childDeptId" name="childDeptId"
+                                class="form-select ng-untouched ng-pristine ng-valid" [(ngModel)]="newEmployee.deptId">
+                                <option selected="" value="0">Select department</option><!---->
                                 @for (item of childParentList; track $index) {
-                                    <option [value]="item.childDeptId">{{item.departmentName}}</option>
+                                <option [value]="item.childDeptId">{{item.departmentName}}</option>
                                 }
 
                             </select></div>
@@ -78,15 +80,15 @@
                     <div class="row">
                         <div class="col-md-6"><label for="password" class="form-label">Password</label><input
                                 type="password" name="password" id="password" placeholder="Enter password"
-                                class="form-control ng-untouched ng-pristine ng-valid"></div>
+                                class="form-control ng-untouched ng-pristine ng-valid" [(ngModel)]="newEmployee.password"></div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div>Select Gender</div><input type="radio" value="Male" name="gender"
-                                class="ng-untouched ng-pristine ng-valid"> Male <input type="radio" value="FeMale"
-                                name="gender" class="ng-untouched ng-pristine ng-valid"> FeMale
+                                class="ng-untouched ng-pristine ng-valid" [(ngModel)]="newEmployee.gender"> Male <input type="radio" value="FeMale"
+                                name="gender" class="ng-untouched ng-pristine ng-valid" [(ngModel)]="newEmployee.gender"> FeMale
                         </div>
-                    </div><button type="button" class="btn btn-warning mt-3">Submit</button><!----><!---->
+                    </div><button type="button" class="btn btn-warning mt-3" (click)="createEmployee()">Submit</button><!----><!---->
                 </form>
             </div>
         </div>
