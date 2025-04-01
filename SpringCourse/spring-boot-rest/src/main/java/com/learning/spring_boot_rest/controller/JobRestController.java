@@ -3,8 +3,6 @@ package com.learning.spring_boot_rest.controller;
 import com.learning.spring_boot_rest.model.JobPost;
 import com.learning.spring_boot_rest.service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,6 +13,8 @@ public class JobRestController {
 
     @Autowired
     JobService service;
+
+
 
     @GetMapping("jobPosts")
 //    @ResponseBody // Indicate that it just respond with data. Just needed when the class annotation is @Controller.
@@ -38,7 +38,18 @@ public class JobRestController {
     }
 
     @DeleteMapping("jobPost")
-    public boolean removeJob(@RequestBody JobPost job) {
-        return service.removeJob(job);
+    public void removeJob(@RequestBody JobPost job) {
+        service.removeJob(job);
+    }
+
+    @GetMapping("/jobPost/keyword/{keyword}")
+    public List<JobPost> searchByKeyword(@PathVariable String keyword) {
+        return service.searchByKeyword(keyword);
+    }
+
+    @GetMapping("start")
+    public String start() {
+        service.start();
+        return "success";
     }
 }
