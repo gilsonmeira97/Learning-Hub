@@ -24,4 +24,12 @@ export class MasterService {
   createEmployee(newEmployee: Employee) {
     return this.http.post<Employee>(`${this.baseURL}/CreateEmployee`, newEmployee);
   }
+
+  getAllEmployees() {
+    return this.http.get<Employee[]>(`${this.baseURL}/GetAllEmployees`);
+  }
+
+  deleteEmployees(employeeId: number) {
+    return this.http.delete(`${this.baseURL}/DeleteEmployee/${employeeId}`);
+  }
 }

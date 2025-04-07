@@ -20,15 +20,18 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @for (employee of allEmployee; track $index) {
                         <tr>
-                            <td>1</td>
-                            <td>Manzi</td>
-                            <td>12809876</td>
-                            <td>man04.com</td>
-                            <td>3437</td>
-                            <td><button class="btn btn-success btn-sm">Edit</button><button
-                                    class="btn btn-danger btn-sm">Delete</button></td>
+                            <td>{{employee.employeeId}}</td>
+                            <td>{{employee.employeeName}}</td>
+                            <td>{{employee.contactNo}}</td>
+                            <td>{{employee.emailId}}</td>
+                            <td>{{employee.deptId}}</td>
+                            <td><button class="btn btn-success btn-sm" >Edit</button><button
+                                    class="btn btn-danger btn-sm" (click)="deleteEmployee(employee.employeeId)">Delete</button></td>
                         </tr>
+                        }
+
                     </tbody>
                 </table>
             </div>
@@ -47,15 +50,18 @@
                     <div class="row">
                         <div class="col-md-6"><label for="employeeName" class="form-label">Employee Name</label><input
                                 type="text" name="employeeName" id="employeeName" placeholder="Enter employee name"
-                                class="form-control ng-untouched ng-pristine ng-valid" [(ngModel)]="newEmployee.employeeName"></div>
+                                class="form-control ng-untouched ng-pristine ng-valid"
+                                [(ngModel)]="newEmployee.employeeName"></div>
                         <div class="col-md-6"><label for="contactNo" class="form-label">Contact No</label><input
                                 type="text" name="contactNo" id="contactNo" placeholder="Enter contact number"
-                                class="form-control ng-untouched ng-pristine ng-valid"  [(ngModel)]="newEmployee.contactNo"></div>
+                                class="form-control ng-untouched ng-pristine ng-valid"
+                                [(ngModel)]="newEmployee.contactNo"></div>
                     </div>
                     <div class="row">
                         <div class="col-md-6"><label for="emailId" class="form-label">Email</label><input type="email"
                                 name="emailId" id="emailId" placeholder="Enter email"
-                                class="form-control ng-untouched ng-pristine ng-valid"  [(ngModel)]="newEmployee.emailId"></div>
+                                class="form-control ng-untouched ng-pristine ng-valid"
+                                [(ngModel)]="newEmployee.emailId"></div>
                     </div>
                     <div class="row">
                         <div class="col-md-6"><label for="deptId" class="form-label">Parent Department</label><select
@@ -80,15 +86,18 @@
                     <div class="row">
                         <div class="col-md-6"><label for="password" class="form-label">Password</label><input
                                 type="password" name="password" id="password" placeholder="Enter password"
-                                class="form-control ng-untouched ng-pristine ng-valid" [(ngModel)]="newEmployee.password"></div>
+                                class="form-control ng-untouched ng-pristine ng-valid"
+                                [(ngModel)]="newEmployee.password"></div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div>Select Gender</div><input type="radio" value="Male" name="gender"
-                                class="ng-untouched ng-pristine ng-valid" [(ngModel)]="newEmployee.gender"> Male <input type="radio" value="FeMale"
-                                name="gender" class="ng-untouched ng-pristine ng-valid" [(ngModel)]="newEmployee.gender"> FeMale
+                                class="ng-untouched ng-pristine ng-valid" [(ngModel)]="newEmployee.gender"> Male <input
+                                type="radio" value="FeMale" name="gender" class="ng-untouched ng-pristine ng-valid"
+                                [(ngModel)]="newEmployee.gender"> FeMale
                         </div>
-                    </div><button type="button" class="btn btn-warning mt-3" (click)="createEmployee()">Submit</button><!----><!---->
+                    </div><button type="button" class="btn btn-warning mt-3"
+                        (click)="createEmployee()">Submit</button><!----><!---->
                 </form>
             </div>
         </div>

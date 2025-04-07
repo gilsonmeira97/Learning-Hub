@@ -19,9 +19,11 @@ export class EmployeeComponent implements OnInit {
   childParentList: ChildDept[] = [];
   
   newEmployee: Employee = new Employee();
+  allEmployee: Employee[] = []
 
   ngOnInit(): void {
       this.getParentDeptList();
+      this.getAllEmployees();
   }
 
   getParentDeptList() {
@@ -39,12 +41,20 @@ export class EmployeeComponent implements OnInit {
   createEmployee() {
     this.newEmployee.employeeId = 0;
     this.newEmployee.deptId == 0 ? this.newEmployee.deptId = parseInt(this.selectedDept) : false;
-    console.log(this.newEmployee);
     this.masterService.createEmployee(this.newEmployee).subscribe(res => {
-      this.newEmployee = res;
-      console.log(res)
+      this.allEmployee.push(res)
     });
+  }
 
-    // create function to getAllEmployees
+  getAllEmployees() {
+    this.masterService.getAllEmployees().subscribe((res: Employee[]) => {
+      this.allEmployee = res;
+    });
+  }
+
+  deleteEmployee(id: number) {
+    this.masterService.deleteEmployees(id).subscribe(res => {
+      this.getAllEmployees();
+    });
   }
 }
