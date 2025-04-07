@@ -20,18 +20,27 @@ public class ProductController {
     @Autowired
     ProductService service;
 
-        @GetMapping("/products")
-        public ResponseEntity<List<Product>> getProducts() {
-            return new ResponseEntity<>(service.getAllProducts(), HttpStatus.OK);
-        }
+    @GetMapping("/products")
+    public ResponseEntity<List<Product>> getProducts() {
+        return new ResponseEntity<>(service.getAllProducts(), HttpStatus.OK);
+    }
 
-    @GetMapping("/product/{productName}")
+    @GetMapping("/product/name/{productName}")
     public ResponseEntity<Product> getProductByName(@PathVariable String productName){
         Optional<Product> result = service.getByName(productName);
         if(result.isPresent())
             return new ResponseEntity<>(result.get(), HttpStatus.OK);
         else
-            return new ResponseEntity<>(new Product(), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(new Product(), HttpStatus.NOT_FOUND);
+    }
+
+    @GetMapping("/product/id/{id}")
+    public ResponseEntity<Product> getProductById(@PathVariable int id) {
+        Optional<Product> product = service.getById(id);
+         if(product.isPresent())
+             return new ResponseEntity<>(product.get(), HttpStatus.OK);
+         else
+             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
 }

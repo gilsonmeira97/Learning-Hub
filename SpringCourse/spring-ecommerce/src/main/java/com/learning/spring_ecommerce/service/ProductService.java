@@ -20,4 +20,8 @@ public class ProductService {
     public Optional<Product> getByName(String name) {
         return Optional.ofNullable(repo.findByName(name));
     }
+
+    public Optional<Product> getById(int id) {
+        return repo.findById(id);
+    }
 }
